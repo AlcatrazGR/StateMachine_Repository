@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LearningScript : MonoBehaviour {
-	public HingeJoint[] hingeJoints;
 
 	// Use this for initialization, it is called only once at the start of the
 	//game.
 	void Start () {
-		hingeJoints = gameObject.GetComponent<HingeJoint> ();
+		Dictionary<int, string> myFavoriteWeapons = new Dictionary<int, string> ();
 
-		for (int i=0; i<hingeJoints.Length(); i++) {
-			Debug.Log(hingeJoints[i]);
+		myFavoriteWeapons.Add (10, "Dagger");
+		myFavoriteWeapons.Add (20, "Katana");
+		myFavoriteWeapons.Add (30, "Blund");
+		myFavoriteWeapons.Add (40, "Hammer");
+
+		for (int i=10; i<=40; i += 10) {
+			Debug.Log("Weapon : "+myFavoriteWeapons[i]);
 		}
+
 	}
 	
 	// Update is called once per frame, it is called every time the frames
