@@ -46,9 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\Scripts\LearningScript.cs" />
-     <Compile Include="Assets\Code\Scripts\Spinner.cs" />
-     <Compile Include="Assets\Code\Scripts\TalkToMe.cs" />
+     <Compile Include="Assets\Code\Interfaces\IStateBase.cs" />
+     <Compile Include="Assets\Code\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Code\States\BeginState.cs" />
+     <Compile Include="Assets\Code\States\LostState.cs" />
+     <Compile Include="Assets\Code\States\PlayState.cs" />
+     <Compile Include="Assets\Code\States\WonState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
