@@ -17,6 +17,15 @@ public class StateManager : MonoBehaviour {
 			activeState.StateUpdate ();
 	}
 
+	//The OnGUI method will be called at least once per frame
+	void OnGUI(){
+		if (activeState != null) {
+			activeState.ShowIt();
+		}
+	}
+
+	//A method which is called from the states in order for
+	//them to change the reference.
 	public void SwitchState(IStateBase newState){
 		activeState = newState;
 	}
