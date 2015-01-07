@@ -12,10 +12,8 @@ namespace Assets.Code.States
 		//Constructor
 		public BeginState (StateManager managerRef){
 			manager = managerRef;
-			futureTime = ScreenDuration + Time.realtimeSinceStartup;
-			//The line below set the timeScale to 0 so the scenes is 
-			//generally paused.
-			Time.timeScale = 0;
+			if (Application.loadedLevelName != "Scene0")
+				Application.LoadLevel ("Scene0");
 		}
 
 		public void StateUpdate(){
@@ -37,8 +35,9 @@ namespace Assets.Code.States
 		}
 
 		void Switch(){
-			//The line below set the speed of the game to run normally.
-			Time.timeScale = 1;
+			//The above line of code brings on the front the scene that is 
+			//on the brackets.
+			Application.LoadLevel ("StateMachineScene");
 			manager.SwitchState (new PlayState (manager));
 		}
 	}
