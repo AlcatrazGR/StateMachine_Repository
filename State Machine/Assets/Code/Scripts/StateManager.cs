@@ -6,6 +6,12 @@ using Assets.Code.Interfaces;
 public class StateManager : MonoBehaviour {
 	private IStateBase activeState;
 
+	//This is a unity attribute that will prevent the public variable
+	//to be displayed in the inspector.
+	[HideInInspector]
+	//Variable that will store all the components of the game manager
+	public GameData gameDataRef;
+
 	//This variable stores a stateManager reference. Its private
 	//so it can be used only inside StateManager and static so
 	//that the first reference will be the one which will be shared
@@ -29,6 +35,7 @@ public class StateManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		activeState = new BeginState (this);
+		gameDataRef = GetComponent<GameData> ();
 	}
 	
 	// Update is called once per frame
