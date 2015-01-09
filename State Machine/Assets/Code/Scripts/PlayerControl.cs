@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
 	public Color white = Color.white;
 
 	private GameData gameDataRef;
+	
 
 	void FixedUpdate(){
 		float foreAndAft = Input.GetAxis ("Vertical") * speed;
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("Start of Player Control");
 		gameDataRef = GameObject.Find ("GameManager").GetComponent<GameData> ();
 	}
 

@@ -10,14 +10,35 @@ public class GameData : MonoBehaviour {
 	public Texture2D wonStateSplash;
 	public List<GameObject> cameras;
 
+	private int playerLivesSelected = 2;
+	private int sceneBeginningScore;
+
 	[HideInInspector]
 	public int playerLives;
 
+	[HideInInspector]
+	public int score;
+	
 	// Use this for initialization
 	void Start () {
-	
+		playerLives = playerLivesSelected;
 	}
-	
+
+	public void ResetPlayer(){
+		playerLives = playerLivesSelected;
+		score = sceneBeginningScore;
+	}
+
+	public void SetPlayerLives(int livesSelected){
+		playerLivesSelected = livesSelected;
+		playerLives = livesSelected;
+	}
+
+	public void SetScore(){
+		sceneBeginningScore = score;
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 	

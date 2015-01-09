@@ -35,13 +35,15 @@ namespace Assets.Code.States
 			GUI.Box(new Rect(Screen.width - 110, 40, 100, 120), "Player Lives");
 
 			if (GUI.Button (new Rect (Screen.width - 100, 70, 80, 20), "5"))
-				manager.gameDataRef.playerLives = 5;
+				manager.gameDataRef.SetPlayerLives(5);
 
 			if (GUI.Button (new Rect (Screen.width - 100, 100, 80, 20), "10"))
-				manager.gameDataRef.playerLives = 10;
+				manager.gameDataRef.SetPlayerLives(10);
 
 			if (GUI.Button (new Rect (Screen.width - 100, 130, 80, 20), "Cant Lose!"))
-				manager.gameDataRef.playerLives = 100;
+				manager.gameDataRef.SetPlayerLives(100);
+
+			//------------------------------- Setting Player Color Part -------------------------------------
 
 			GUI.Box(new Rect(10, 10, 100, 180), "Player Color");
 
