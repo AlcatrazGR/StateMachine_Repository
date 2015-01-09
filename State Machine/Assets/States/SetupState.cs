@@ -19,6 +19,9 @@ namespace Assets.Code.States
 
 			player = GameObject.Find ("Player");
 			controller = player.GetComponent<PlayerControl> ();
+
+			Debug.Log (player);
+			Debug.Log (controller);
 		}
 
 		public void StateUpdate(){
@@ -27,6 +30,19 @@ namespace Assets.Code.States
 		}
 				
 		public void ShowIt(){
+			GUI.Box (new Rect (Screen.width - 110, 10, 100, 25),
+			         string.Format ("Lives left : " + manager.gameDataRef.playerLives));
+			GUI.Box(new Rect(Screen.width - 110, 40, 100, 120), "Player Lives");
+
+			if (GUI.Button (new Rect (Screen.width - 100, 70, 80, 20), "5"))
+				manager.gameDataRef.playerLives = 5;
+
+			if (GUI.Button (new Rect (Screen.width - 100, 100, 80, 20), "10"))
+				manager.gameDataRef.playerLives = 10;
+
+			if (GUI.Button (new Rect (Screen.width - 100, 130, 80, 20), "Cant Lose!"))
+				manager.gameDataRef.playerLives = 100;
+
 			GUI.Box(new Rect(10, 10, 100, 180), "Player Color");
 
 			if (GUI.Button (new Rect (20, 40, 80, 20), "Red"))
@@ -49,6 +65,7 @@ namespace Assets.Code.States
 			if (GUI.Button (new Rect (Screen.width / 2 - 100, Screen.height - 50, 200, 40),
 				"Click Here or Press 'P' to Play") || Input.GetKeyUp (KeyCode.P)) {
 				manager.SwitchState(new PlayStateScene1_1(manager));
+				player.transform.position = new Vector3(50, .5f, 40);
 			}
 		}
 	}

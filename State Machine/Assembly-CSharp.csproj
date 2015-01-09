@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\Interfaces\IStateBase.cs" />
+     <Compile Include="Assets\Code\Scripts\FollowingPlayer.cs" />
      <Compile Include="Assets\Code\Scripts\GameData.cs" />
+     <Compile Include="Assets\Code\Scripts\LookAtPlayer.cs" />
      <Compile Include="Assets\Code\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Code\Scripts\StateManager.cs" />
      <Compile Include="Assets\States\BeginState.cs" />
