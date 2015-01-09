@@ -52,18 +52,18 @@
      <Compile Include="Assets\Code\Scripts\LookAtPlayer.cs" />
      <Compile Include="Assets\Code\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Code\Scripts\StateManager.cs" />
-     <Compile Include="Assets\States\BeginState.cs" />
-     <Compile Include="Assets\States\LostState.cs" />
-     <Compile Include="Assets\States\LostStateScene1.cs" />
-     <Compile Include="Assets\States\LostStateScene2.cs" />
-     <Compile Include="Assets\States\PlayState.cs" />
-     <Compile Include="Assets\States\PlayStateScene1_1.cs" />
-     <Compile Include="Assets\States\PlayStateScene1_2.cs" />
-     <Compile Include="Assets\States\PlayStateScene2.cs" />
-     <Compile Include="Assets\States\SetupState.cs" />
-     <Compile Include="Assets\States\WonState.cs" />
-     <Compile Include="Assets\States\WonStateScene1.cs" />
-     <Compile Include="Assets\States\WonStateScene2.cs" />
+     <Compile Include="Assets\Code\States\BeginState.cs" />
+     <Compile Include="Assets\Code\States\LostState.cs" />
+     <Compile Include="Assets\Code\States\LostStateScene1.cs" />
+     <Compile Include="Assets\Code\States\LostStateScene2.cs" />
+     <Compile Include="Assets\Code\States\PlayState.cs" />
+     <Compile Include="Assets\Code\States\PlayStateScene1_1.cs" />
+     <Compile Include="Assets\Code\States\PlayStateScene1_2.cs" />
+     <Compile Include="Assets\Code\States\PlayStateScene2.cs" />
+     <Compile Include="Assets\Code\States\SetupState.cs" />
+     <Compile Include="Assets\Code\States\WonState.cs" />
+     <Compile Include="Assets\Code\States\WonStateScene1.cs" />
+     <Compile Include="Assets\Code\States\WonStateScene2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
