@@ -11,38 +11,41 @@ namespace Assets.Code.States
 
 		public PlayStateScene1_1 (StateManager managerRef){
 			manager = managerRef;
-			if (Application.loadedLevelName != "Scene1")
-				Application.LoadLevel ("Scene1");
 
-			player = GameObject.Find ("Player");
-			//Sets the physics properties to the player
+			if(Application.loadedLevelName != "Scene1")
+				Application.LoadLevel("Scene1");
+
+			player = GameObject.Find("Player");
 			player.rigidbody.isKinematic = false;
-		}
 
-		public void StateUpdate(){
-			/*
-			foreach (GameObject camera in manager.gameDataRef.cameras) {
+			foreach(GameObject camera in manager.gameDataRef.cameras){
 				if(camera.name != "LookAt Camera")
 					camera.SetActive(false);
 				else
 					camera.SetActive(true);
 			}
-			*/
+		}
 
-			if (manager.gameDataRef.playerLives <= 0) {
+		public void StateUpdate(){
+			if(manager.gameDataRef.playerLives <= 0){
 				manager.SwitchState(new LostStateScene1(manager));
 				manager.gameDataRef.ResetPlayer();
 				player.rigidbody.isKinematic = true;
 				player.transform.position = new Vector3(50, .5f, 40);
 			}
-
-			if (manager.gameDataRef.score >= 2) {
+			if(manager.gameDataRef.score >= 2){
 				manager.SwitchState(new WonStateScene1(manager));
+				player.rigidbody.isKinematic = true;
+				player.transform.position = new Vector3(50, .5f, 40);
 			}
 		}
 		
 		public void ShowIt(){
-			
+			GUI.Box(new Rect(10,10,100,25), string.Format("Score: "+ manager.gameDataRef.score));
+			if(GUI.Button(new Rect(Screen.width/2 - 130, 10, 260, 30), string.Format("Click here or Press 2 for Level 1, State 2")) || Input.GetKeyUp(KeyCode.Alpha2)){
+				manager.SwitchState(new PlayStateScene1_2(manager));
+			}
+			GUI.Box(new Rect(Screen.width - 110,10,100,25), string.Format("Lives left: "+ manager.gameDataRef.playerLives));
 		}
 	}
 }

@@ -29,6 +29,20 @@ public class PlayerControl : MonoBehaviour {
 		rigidbody.AddForce (Vector3.up * hoverPower);
 	}
 
+	void onTriggerEnter(Collider other){
+		if (other.gameObject.tag == "GoodOrb") {
+			gameDataRef.score += 1;
+			Destroy(other.gameObject);
+		}
+	}
+
+	void OnCollisionEnter(Collision collidedWith){
+		if (collidedWith.gameObject.tag == "BadOrb") {
+			gameDataRef.playerLives -= 1;
+			Destroy(collidedWith.gameObject);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("Start of Player Control");

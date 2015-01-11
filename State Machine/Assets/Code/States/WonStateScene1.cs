@@ -10,6 +10,9 @@ namespace Assets.Code.States
 
 		public WonStateScene1 (StateManager managerRef){
 			manager = managerRef;
+			if (Application.loadedLevelName != "Scene0")
+				Application.LoadLevel ("Scene0");
+			manager.gameDataRef.SetScore ();
 		}
 
 		public void StateUpdate(){

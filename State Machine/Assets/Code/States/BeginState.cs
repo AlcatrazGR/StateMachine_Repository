@@ -15,20 +15,15 @@ namespace Assets.Code.States
 		}
 
 		public void StateUpdate(){
-			if (Input.GetKeyUp (KeyCode.Space)) {
-				manager.SwitchState(new SetupState(manager));
-			}
 		}
 
 		//Method that show a button each time the method OnGUI is called.
 		public void ShowIt(){
-			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), 
-			                 manager.gameDataRef.beginStateSplash, ScaleMode.ScaleToFit);
-			
-			if (GUI.Button (new Rect (10, 10, 250, 60), "Press to Play") || Input.anyKeyDown) {
-				manager.SwitchState(new SetupState(manager));
+			GUI.DrawTexture(new Rect(0, 0, Screen.width,Screen.height),
+				manager.gameDataRef.beginStateSplash, ScaleMode.StretchToFill);
+			if (GUI.Button(new Rect(10, 10, 250, 60), "Press Here or Any Key to Continue") || Input.anyKeyDown){
+				manager.SwitchState (new SetupState (manager));
 			}
-
 		}
 
 	}
