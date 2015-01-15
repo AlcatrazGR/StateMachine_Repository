@@ -1,21 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LookAtPlayer : MonoBehaviour {
+public class LookAtPlayer : MonoBehaviour{
 
 	private Transform playerPosition;
 
-	// Use this for initialization
-	void Start () {
-		playerPosition = GameObject.Find ("Player").transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Start(){
+		playerPosition = GameObject.Find("Player").transform;
 	}
 
-	void LateUpdate () {
-		transform.LookAt (playerPosition);
+	void LateUpdate( ){
+		transform.LookAt(playerPosition);
 	}
 }

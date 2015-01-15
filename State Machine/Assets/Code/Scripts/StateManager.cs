@@ -56,4 +56,9 @@ public class StateManager : MonoBehaviour {
 	public void SwitchState(IStateBase newState){
 		activeState = newState;
 	}
+
+	public void Restart(){
+		Destroy (gameObject);
+		Application.LoadLevel ("Scene0");
+	}
 }

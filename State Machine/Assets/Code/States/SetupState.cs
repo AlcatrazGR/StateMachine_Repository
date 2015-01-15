@@ -28,6 +28,8 @@ namespace Assets.Code.States
 			if (!Input.GetButton ("Jump"))
 				controller.transform.Rotate (0, controller.setupSpinSpeed * Time.deltaTime, 0);
 		}
+		public void StateFixedUpdate(){
+		}
 				
 		public void ShowIt(){
 			GUI.Box (new Rect (Screen.width - 110, 10, 100, 25),

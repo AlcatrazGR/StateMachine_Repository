@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
-using AssemblyCSharp;
 using System.Collections.Generic;
-
-public class GameData : MonoBehaviour {
-
+public class GameData : MonoBehaviour
+{
 	public Texture2D beginStateSplash;
 	public Texture2D lostStateSplash;
 	public Texture2D wonStateSplash;
 	public List<GameObject> cameras;
-
 	private int playerLivesSelected = 2;
 	private int sceneBeginningScore;
 
@@ -18,9 +14,8 @@ public class GameData : MonoBehaviour {
 
 	[HideInInspector]
 	public int score;
-	
-	// Use this for initialization
-	void Start () {
+
+	void Start (){
 		playerLives = playerLivesSelected;
 	}
 
@@ -36,11 +31,5 @@ public class GameData : MonoBehaviour {
 
 	public void SetScore(){
 		sceneBeginningScore = score;
-	}
-
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

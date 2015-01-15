@@ -49,6 +49,13 @@ public class PlayerControl : MonoBehaviour {
 		gameDataRef = GameObject.Find ("GameManager").GetComponent<GameData> ();
 	}
 
+	public void FireEnergyPulse(){
+		Rigidbody clone;
+		clone = Instantiate (projectile, transform.position, transform.rotation) as Rigidbody;
+		clone.transform.Translate (0, .5f, 2.1f);
+		clone.velocity = transform.TransformDirection (Vector3.forward * 50);
+	}
+
 	public void PlayerUpdate(){
 
 	}
